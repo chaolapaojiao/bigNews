@@ -32,10 +32,12 @@ $(function() {
             username: $('#form_reg [name=username]').val(),
             password: $('#firstpassword').val()
         }
-        $.post('http://www.liulongbin.top:3007/api/reguser',
+        console.log(data)
+        $.post('/api/reguser',
             data,
             function(res) {
                 if (res.status !== 0) {
+                    z
                     return layer.msg(res.message)
                 }
                 layer.msg('注册成功 请登录')
@@ -49,7 +51,7 @@ $(function() {
         e.preventDefault()
         $.ajax({
             method: 'POST',
-            url: 'http://www.liulongbin.top:3007/api/login',
+            url: '/api/login',
             // 快速获取表单数据
             data: $(this).serialize(),
             success: function(res) {
@@ -59,7 +61,7 @@ $(function() {
                 layer.msg('登录成功')
                     // 将登录成功后得到的 token 保存到localStorage中
                 localStorage.setItem('token', res.token)
-                location.href = './index.html'
+                localStorage.href = './index.html'
             }
         })
     })
