@@ -26,17 +26,7 @@ function getUserInfo() {
             // 调用函数渲染头像
             renderAavatr(res.data)
         },
-        // compete  回调函数
-        complete: function(res) {
-            console.log(111)
-            if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
-                console.log(1);
-                // 1.清空 token 
-                localStorage.removeItem('token')
-                    // 2.跳转回登录页面
-                location.href = './login.html'
-            }
-        }
+
     })
 }
 
