@@ -32,12 +32,10 @@ $(function() {
             username: $('#form_reg [name=username]').val(),
             password: $('#firstpassword').val()
         }
-        console.log(data)
         $.post('/api/reguser',
             data,
             function(res) {
                 if (res.status !== 0) {
-                    z
                     return layer.msg(res.message)
                 }
                 layer.msg('注册成功 请登录')
@@ -61,7 +59,7 @@ $(function() {
                 layer.msg('登录成功')
                     // 将登录成功后得到的 token 保存到localStorage中
                 localStorage.setItem('token', res.token)
-                localStorage.href = './index.html'
+                location.href = './index.html'
             }
         })
     })
