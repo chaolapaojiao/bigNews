@@ -11,7 +11,6 @@ $.ajaxPrefilter(function(option) {
     }
     // 全局统一挂载 complete 函数
     option.compelet = function(res) {
-        console.log(111)
         if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
             console.log(1);
             // 1.清空 token 

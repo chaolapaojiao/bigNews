@@ -21,7 +21,8 @@ function getUserInfo() {
         url: '/my/userinfo',
         success: function(res) {
             if (res.status != 0) {
-                return layui.layer.msg('用户数据请求失败')
+                layer.msg('用户数据请求失败')
+                return false
             }
             // 调用函数渲染头像
             renderAavatr(res.data)
@@ -38,7 +39,7 @@ function renderAavatr(user) {
     $('#welcom').html('欢迎&nbsp' + name)
         // 按需渲染用户头像
     if (user.user_pic != null) {
-        $('.layui-nav-img').attr('src', user.user - pic).show()
+        $('.layui-nav-img').attr('src', user.user_pic).show()
         $('.alp').hide()
     } else {
         $('.layui-nav-img').hide()

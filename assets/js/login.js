@@ -20,7 +20,8 @@ $(function() {
         repwd: function(value) {
             var pwd = $('#firstpassword').val()
             if (pwd !== value) {
-                return '两次密码不一致！'
+                layer.msg('两次密码不一致！')
+                return false
             }
         }
     })
