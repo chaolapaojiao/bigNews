@@ -58,7 +58,7 @@ $(function() {
             success: function(res) {
                 if (res.status != 0) {
                     layer.msg('更换头像失败')
-                    return flase
+                    return false
                 }
                 layer.msg('更换头像成功')
                 window.parent.getUserInfo()
